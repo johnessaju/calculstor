@@ -1,0 +1,79 @@
+/* 
+justify-content: ceneter is used to center the entire container eg: calculator-grid horizontally(default)
+align-content: center is used to center the entire container eg: calculator-grid vertically(default)
+justify-item: ceneter is used to center the element inside container eg: butttons,div horizontally(default) within the given space for each element
+align-content: ceneter is used to center the element inside container eg: butttons,div vertically(default) within the given space for each element
+margin:0; so it overide the default setting of brower
+padding: 0; so it overide the default setting of brower
+box-sizing: border-box; so width and height is as per given eg: actualwidth= width(user given)+ padding + margin
+display:grid // display is set to grid ( two dimensional)
+display:flex // display is set to flex ( one dimensional)
+grid-template-columns: repeat(4,100px); // sets number of columns in grid
+grid-template-rows: minmax(120px,auto) repeat(5,100px); sets number of rows in grid, minmax(120px,auto) so row goes down as we type more data
+word-break: break-all; so the nnumber breaks at any point( when it reach the box size width it goes to new line)
+word-wrap: break-word( not used here) so the line or data breaks at only between words  ( when it reach the box size width it goes to new line)
+*/
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+
+body{
+    
+    background: linear-gradient(to right, #d7e23d,#ff9100);
+    
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;   
+    grid-template-columns: repeat(4,75px);
+    grid-template-rows: minmax(100px,auto) repeat(5,75px);
+   
+    
+    
+}
+
+button{
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.90);
+    font-size: 1.5rem;
+    font-weight: normal;
+    outline: none;
+}
+
+button:hover{
+    background-color: rgba(255,255,255,0.90);
+}
+
+.output{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.75);
+    grid-column: 1/-1;
+    padding:10px;
+    word-break: break-all;
+}
+
+.previous-operand{
+    color:rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+}
+
+.current-operand{
+    color: rgba(255,255,255,0.90);
+    font-size: 2rem;
+}
+.span-two{
+    grid-column: span 2;
+}
+
